@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="6.7" name="GeckoLinux_ROLLING_Plasma">
+    <description type="system">
+        <author>sb56637</author>
+        <contact>geckolinux@googlegroups.com</contact>
+        <specification>
+            GeckoLinux description for Kiwi
+        </specification>
+    </description>
+
+    <preferences>
+        <type image="iso" primary="true" flags="overlay" hybrid="true" firmware="uefi" kernelcmdline="quiet splash apparmor=0" hybridpersistent_filesystem="ext4" hybridpersistent="true" volid="GeckoLinux_ROLLING_Plasma" mediacheck="true"/>
+        <version>999.210526.0</version>
+        <packagemanager>zypper</packagemanager>
+        <locale>en_US</locale>
+        <keytable>us.map.gz</keytable>
+        <timezone>Europe/Berlin</timezone>
+        <rpm-excludedocs>true</rpm-excludedocs>
+        <rpm-check-signatures>false</rpm-check-signatures>
+        <bootsplash-theme>bgrt</bootsplash-theme>
+        <bootloader-theme>openSUSE</bootloader-theme>
+    </preferences>
+
+    <preferences>
+        <type image="vmx" filesystem="ext4" bootloader="grub2" kernelcmdline="splash" firmware="uefi"/>
+    </preferences>
+
+  <users>
+    <user groups="root" name="root" password="" home="/root"/>
+  </users>
+
+  <repository type='rpm-dir' priority="1">
+    <source path='dir:///root/GeckoLinux_ROLLING_Plasma/'/>
+  </repository>
+  <repository type="rpm-md" priority="2">
+    <source path="http://geckolinux.github.io/rpm/"/>
+  </repository>
+  <repository type="rpm-md" alias="Packman_Tumbleweed" imageinclude="true" priority="90">
+    <source path="http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/"/>
+  </repository>
+  <repository type="rpm-md" alias="Tumbleweed_OSS-updates" imageinclude="true" priority="97">
+    <source path="http://download.opensuse.org/update/tumbleweed/"/>
+  </repository>
+  <repository type="yast2" alias="Tumbleweed_OSS" imageinclude="true" priority="98">
+    <source path="http://download.opensuse.org/tumbleweed/repo/oss/"/>
+  </repository>
+  <repository type="yast2" alias="Tumbleweed_non-OSS" imageinclude="true" priority="98">
+    <source path="http://download.opensuse.org/tumbleweed/repo/non-oss/"/>
+  </repository>
+
+    <packages type="iso">
+        <package name="gfxboot-branding-openSUSE"/>
+    </packages>
+
+    <packages type="bootstrap">
+        <package name="gawk"/>
+        <package name="udev"/>
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+        <package name="cracklib-dict-full"/>
+        <package name="ca-certificates"/>
+        <package name="openSUSE-release"/>
+        <package name="xz" />
+    </packages>
+
+    <packages type="image">
+
+<package name="-busybox-gzip"/>
+<package name="-busybox-grep"/>
+
+        <package name="kolourpaint"/>
+
+        <package name="xf86-video-amdgpu"/>
+        <package name="systemd-zram-service"/>
+        <package name="earlyoom"/>
+
+        <package name="plasma5-systemmonitor"/>
+        <package name="qqc2-desktop-style"/>
+
+        <package name="smartmontools"/>
+        <package name="p7zip-full"/>
+
+        <package name="libavcodec56"/>
+        <package name="libavformat56"/>
+        <package name="patterns-server-printing"/>
+        <package name="exfatprogs"/>
+        <package name="nilfs-utils"/>
+        <package name="reiserfs"/>
+        <package name="reiser4progs"/>
+        <package name="btrfsprogs"/>
+
+		<package name="dracut-kiwi-live"/>
+		<package name="zip"/>
+		<package name="unzip"/>
+		<package name="os-prober"/>
+		<package name="NetworkManager-openvpn"/>
+		<package name="plasma-nm5-openvpn"/>
+
+
+        <package name="checkmedia"/>
+        <package name="patterns-base-base"/>
+        <package name="plymouth-branding-openSUSE"/>
+        <package name="plymouth-dracut"/>
+        <package name="grub2-branding-openSUSE"/>
+         
+        <package name="iputils"/>
+        <package name="grub2"/>
+        <package name="grub2-x86_64-efi" arch="x86_64"/>
+        <package name="grub2-i386-pc"/>
+        <package name="syslinux"/>
+        <package name="lvm2"/>
+        <package name="plymouth"/>
+        <package name="fontconfig"/>
+        <package name="fonts-config"/>
+        <package name="tar"/>
+        <package name="parted"/>
+        <package name="iproute2"/>
+        <package name="less"/>
+        <package name="bash-completion"/>
+        <package name="dhcp-client"/>
+        <package name="which"/>
+        <package name="shim"/>
+        <package name="kernel-default"/>
+        <package name="timezone"/>
+	<package name="xhost"/>
+	<archive name="livecd-udev.tar.xz"/>
+
+    <package name="kdnssd"/>
+    <package name="kio_audiocd"/>
+    <package name="kio-extras5"/>
+    <package name="libkcddb"/>
+    <package name="libKF5CompactDisc5"/>
+    <package name="libkioarchive5"/>
+    <package name="Mesa-dri"/>
+    <package name="kexec-tools"/>
+    <package name="mokutil"/>
+    <package name="usbmuxd"/>
+    <package name="libva2"/>
+    <package name="libva-x11-2"/>
+    <package name="libva-drm2"/>
+    <package name="libva-wayland2"/>
+    <package name="libqt5-qtstyleplugins-platformtheme-gtk2"/>
+    <package name="libqt5-qtbase-platformtheme-gtk3"/>
+
+    <package name="patterns-base-minimal_base"/>
+     
+    <package name="patterns-yast-x11_yast"/>
+    <package name="patterns-gnome-sw_management_gnome"/>
+    <package name="patterns-gnome-gnome_yast"/>
+    <package name="patterns-base-apparmor"/>
+    <package name="patterns-base-enhanced_base"/>
+     
+     
+    <package name="patterns-fonts-fonts"/>
+    <package name="patterns-yast-yast2_install_wf"/>
+    <package name="patterns-fonts-fonts_opt"/>
+    <package name="patterns-base-sw_management"/>
+    <package name="patterns-yast-yast2_basis"/>
+    <package name="patterns-base-x11"/>
+ 
+    <package name="patterns-yast-yast2_basis"/>
+    <package name="libavcodec57"/>
+    <package name="libavdevice57"/>
+    <package name="crda"/>
+    <package name="lsb-release"/>
+    <package name="spectacle"/>
+    <package name="calamares"/>
+    <package name="baloo5-file"/>
+    <package name="baloo5-tools"/>
+    <package name="kdegraphics-thumbnailers"/>
+    <package name="kde-odf-thumbnail"/>
+    <package name="ffmpegthumbs"/>
+    <package name="gparted"/>
+    <package name="xf86-video-sis"/>
+    <package name="system-config-printer"/>
+    <package name="plasma5-addons"/>
+    <package name="plasma5-pa"/>
+    <package name="syslinux"/>
+    <package name="libinput-tools"/>
+    <package name="libinput-udev"/>
+    <package name="bcm43xx-firmware"/>
+    <package name="bcm20702a1-firmware"/>
+    <package name="python-gtk"/>
+    <package name="lvm2"/>
+    <package name="xdm"/>
+    <package name="libimobiledevice-1_0-6"/>
+    <package name="gvfs-backend-samba"/>
+    <package name="python3-gobject-Gdk"/>
+    <package name="python3-gobject-Gdk"/>
+    <package name="broadcom-wl"/>
+    <package name="kernel-default"/>
+    <package name="MozillaFirefox"/>
+    <package name="haveged"/>
+    <package name="python3-coverage"/>
+    <package name="dosfstools"/>
+    <package name="gstreamer-plugins-good-extra"/>
+    <package name="gstreamer-plugins-bad"/>
+    <package name="libmtp9"/>
+    <package name="hfsutils"/>
+    <package name="jfsutils"/>
+    <package name="xfsprogs"/>
+    <package name="p7zip"/>
+    <package name="unrar"/>
+    <package name="python3-smbc"/>
+    <package name="python3-pysmbc"/>
+    <package name="udisks2"/>
+    <package name="mtp-tools"/>
+    <package name="gdk-pixbuf-loader-rsvg"/>
+    <package name="sane-backends-autoconfig"/>
+    <package name="samba-winbind"/>
+    <package name="samba"/>
+    <package name="ifuse"/>
+    <package name="python3-imobiledevice"/>
+    <package name="imobiledevice-tools"/>
+    <package name="ntfsprogs"/>
+    <package name="ntfs-3g"/>
+    <package name="myspell-en_US"/>
+    <package name="openbox"/>
+     
+    <package name="cups-backends"/>
+    <package name="poppler-tools"/>
+    <package name="parallel-printer-support"/>
+    <package name="udev-configure-printer"/>
+    <package name="yast2-printer"/>
+    <package name="ntp"/>
+    <package name="cryptsetup"/>
+    <package name="grub2-snapper-plugin"/>
+    <package name="snapper-zypp-plugin"/>
+    <package name="yast2-snapper"/>
+    <package name="grub2-branding-openSUSE"/>
+    <package name="xf86-video-fbdev"/>
+    <package name="libglut3"/>
+    <package name="Mesa"/>
+     
+    <package name="sudo"/>
+    <package name="yast2-sudo"/>
+    <package name="coreutils"/>
+    <package name="virtualbox-guest-tools"/>
+    <package name="tlp-rdw"/>
+    <package name="tlp"/>
+    <package name="iw"/>
+    <package name="NetworkManager"/>
+    <package name="plymouth-theme-spinner"/>
+    <package name="xorg-x11-libX11-ccache"/>
+    <package name="xorg-x11-libs"/>
+    <package name="xorg-x11-driver-input"/>
+    <package name="yast2-x11"/>
+    <package name="xorg-x11-server-extra"/>
+    <package name="nano"/>
+     
+    <package name="fuse-exfat"/>
+    <package name="gvfs-backend-afc"/>
+    <package name="gvfs-backends"/>
+    <package name="yast2-metapackage-handler"/>
+    <package name="libgeocode-glib0"/>
+    <package name="Mesa-demo-x"/>
+    <package name="geocode-glib"/>
+    <package name="libdmx1"/>
+    <package name="libiptcdata0"/>
+    <package name="libiptcdata"/>
+    <package name="libibus-1_0-5"/>
+    <package name="libxcb-xf86dri0"/>
+    <package name="cantarell-fonts"/>
+    <package name="google-droid-fonts"/>
+    <package name="dejavu-fonts"/>
+    <package name="ubuntu-fonts"/>
+    <package name="glibc-locale"/>
+    <package name="glibc"/>
+    <package name="gsettings-backend-dconf"/>
+    <package name="timezone"/>
+    <package name="zypper"/>
+    <package name="vim"/>
+    <package name="iputils"/>
+    <package name="branding-openSUSE"/>
+    <package name="e2fsprogs"/>
+    <package name="sax3"/>
+    <package name="xf86-input-keyboard"/>
+    <package name="xf86-video-vmware"/>
+    <package name="xf86-input-mouse"/>
+    <package name="xf86-input-synaptics"/>
+    <package name="xf86-input-vmmouse"/>
+    <package name="xf86-input-evdev"/>
+    <package name="xf86-input-wacom"/>
+    <package name="xf86-input-joystick"/>
+    <package name="xdg-user-dirs"/>
+    <package name="xdg-user-dirs-gtk"/>
+    <package name="gutenprint"/>
+    <package name="epson-inkjet-printer-escpr"/>
+    <package name="gstreamer-utils"/>
+    <package name="gstreamer-plugins-base"/>
+    <package name="gstreamer"/>
+    <package name="gstreamer-plugins-good"/>
+    <package name="gstreamer-plugins-ugly"/>
+    <package name="gstreamer-plugins-ugly-orig-addon"/>
+    <package name="gstreamer-plugins-bad-orig-addon"/>
+    <package name="ffmpeg-4"/>
+    <package name="gstreamer-plugins-libav"/>
+    <package name="hplip"/>
+    <package name="cups-pk-helper"/>
+    <package name="cups-filters"/>
+    <package name="manufacturer-PPDs"/>
+    <package name="OpenPrintingPPDs"/>
+    <package name="OpenPrintingPPDs-ghostscript"/>
+    <package name="OpenPrintingPPDs-postscript"/>
+    <package name="OpenPrintingPPDs-hpijs"/>
+    <package name="gvfs"/>
+    <package name="gvfs-fuse"/>
+    <package name="MozillaFirefox-branding-openSUSE"/>
+    <package name="pulseaudio"/>
+    <package name="alsa-plugins-pulse"/>
+    <package name="pulseaudio-utils"/>
+    <package name="pulseaudio-module-bluetooth"/>
+    <package name="pulseaudio-module-zeroconf"/>
+    <package name="pulseaudio-module-gconf"/>
+    <package name="bluez-firmware"/>
+    <package name="avahi"/>
+    <package name="alsa-firmware"/>
+    <package name="kernel-firmware"/>
+    <package name="ivtv-firmware"/>
+    <package name="b43-firmware"/>
+    <package name="b43legacy-firmware"/>
+    <package name="atmel-firmware"/>
+    <package name="mpt-firmware"/>
+    <package name="adaptec-firmware"/>
+    <package name="zd1211-firmware"/>
+    <package name="crystalhd-firmware"/>
+    <package name="isight-firmware-tools"/>
+    <package name="rsync"/>
+    <package name="psmisc"/>
+    <package name="xkill"/>
+    <package name="xrandr"/>
+    <package name="ipw-firmware"/>
+    <package name="virtualbox-guest-x11"/>
+    <package name="xorg-x11"/>
+    <package name="xf86-video-ati"/>
+    <package name="xf86-video-nv"/>
+    <package name="xf86-video-nouveau"/>
+    <package name="wget"/>
+    <package name="libstdc++6-32bit"/>
+    <package name="bluedevil5"/>
+    <package name="clementine"/>
+    <package name="dolphin"/>
+    
+    <package name="gtk2-metatheme-numix"/>
+    <package name="gtk3-metatheme-numix"/>
+    <package name="gwenview5"/>
+    <package name="kate"/>
+    <package name="kcalc"/>
+    <package name="kcm_sddm"/>
+    <package name="kcm-touchpad"/>
+    <package name="kde-gtk-config5"/>
+    <package name="kio_audiocd"/>
+    <package name="kio_iso"/>
+    <package name="kio_kamera"/>
+    <package name="konsole"/>
+    <package name="kscreen"/>
+    <package name="ktorrent"/>
+    <package name="libreoffice"/>
+    <package name="libreoffice-calc"/>
+    <package name="libreoffice-draw"/>
+    <package name="libreoffice-gnome"/>
+    <package name="libreoffice-impress"/>
+    <package name="libreoffice-writer"/>
+    <package name="libreoffice-gtk3"/>
+    <package name="metatheme-numix-common"/>
+    <package name="MozillaThunderbird"/>
+    <package name="okular"/>
+    <package name="pidgin"/>
+    <package name="pidgin-indicator"/>
+    <package name="pidgin-plugin-pack"/>
+    <package name="plasma5-session"/>
+    <package name="sddm-branding-openSUSE"/>
+    <package name="skanlite"/>
+    <package name="vlc"/>
+    <package name="vlc-codecs"/>
+    <package name="yast2-samba-client"/>
+    <package name="yast2-samba-server"/>
+    <package name="usb_modeswitch"/>
+    <package name="system-config-printer-dbus-service"/>
+    <package name="kfind"/>
+    <package name="phonon4qt5-backend-gstreamer"/>
+    <package name="ModemManager"/>
+    <package name="os-prober"/>
+    <package name="rar"/>
+    <package name="ark"/>
+
+  </packages>
+
+</image>
