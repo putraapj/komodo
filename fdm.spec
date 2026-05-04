@@ -9,6 +9,7 @@ URL:            https://www.freedownloadmanager.org/
 Source0:        https://github.com/putraapj/komodo/releases/download/fdmcopr/fdm_6.33.2_amd64.deb
 
 BuildArch:      x86_64
+ExclusiveArch:  x86_64
 
 Requires:       libX11
 Requires:       libXext
