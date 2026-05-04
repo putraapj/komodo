@@ -19,6 +19,9 @@ Requires:       libXScrnSaver
 Requires:       gtk3
 Requires:       nss
 Requires:       alsa-lib
+BuildRequires: binutils
+BuildRequires: xz
+BuildRequires: zstd
 
 %description
 Free Download Manager is a download accelerator and organizer.
